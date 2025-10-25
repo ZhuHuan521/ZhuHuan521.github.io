@@ -3,11 +3,11 @@
   <title>水竹的隐秘后花园</title>
   
   <subtitle>水竹的隐秘后花园</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://blog.0123000.xyz/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://blog.0123000.xyz/"/>
   <updated>2025-10-25T03:13:09.078Z</updated>
-  <id>http://example.com/</id>
+  <id>https://blog.0123000.xyz/</id>
   
   <author>
     <name>水竹</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2025/10/25/hello-world/"/>
-    <id>http://example.com/2025/10/25/hello-world/</id>
+    <link href="https://blog.0123000.xyz/2025/10/25/hello-world/"/>
+    <id>https://blog.0123000.xyz/2025/10/25/hello-world/</id>
     <published>2025-10-25T03:13:09.078Z</published>
     <updated>2025-10-25T03:13:09.078Z</updated>
     
