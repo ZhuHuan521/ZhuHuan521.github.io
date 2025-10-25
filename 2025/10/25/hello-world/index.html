@@ -189,6 +189,8 @@
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
     
     
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a>
+    
   </nav>
   
   
@@ -199,9 +201,18 @@
       
         <picture>
           
+            
+              <source media="(max-width: 479px)" srcset="/images/banner-600w.webp">
+            
+              <source media="(max-width: 799px)" srcset="/images/banner-800w.webp">
+            
+              <source media="(min-width: 800px)" srcset="/images/banner.webp">
+            
+            <img  fetchpriority="high" src="/images/banner.webp" alt="Hello World">
+          
         </picture>
         
-          <img  fetchpriority="high" src="/images/banner.webp" alt="Hello World">
+          <img alt="Hello World" style="visibility: hidden;">
         
       
     
@@ -394,7 +405,7 @@
         
           
           
-            <img data-src="/covers/1.webp" data-sizes="auto" alt="记录CS有史以来最大黑天鹅事件" class="lazyload">
+            <img data-src="https://blog.0123000.xyz/covers/1.webp" data-sizes="auto" alt="记录CS有史以来最大黑天鹅事件" class="lazyload">
           
         
         <a href="/2025/10/25/%E8%AE%B0%E5%BD%95CS%E6%9C%89%E5%8F%B2%E4%BB%A5%E6%9D%A5%E6%9C%80%E5%A4%A7%E9%BB%91%E5%A4%A9%E9%B9%85%E4%BA%8B%E4%BB%B6/" aria-label="前一篇: 记录CS有史以来最大黑天鹅事件" title="前一篇: 记录CS有史以来最大黑天鹅事件"></a>
@@ -453,7 +464,7 @@
     
       <div>
         <span class="icon-brush"></span>
-        531
+        572
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
         00:03
@@ -576,6 +587,22 @@
 
     </div>
     
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png"/>
+        </div>
+      </div>
+    
     
     
     
@@ -615,6 +642,10 @@
 
 <script src="/js/pjax_script.js" data-pjax></script>
 
+
+
+  
+<script src="/js/generator_search.js" defer></script>
 
 
 

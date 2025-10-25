@@ -191,6 +191,8 @@
       <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
     
     
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a>
+    
   </nav>
   
   
@@ -200,9 +202,18 @@
     
       <picture>
         
+          
+            <source media="(max-width: 479px)" srcset="/images/banner-600w.webp">
+          
+            <source media="(max-width: 799px)" srcset="/images/banner-800w.webp">
+          
+            <source media="(min-width: 800px)" srcset="/images/banner.webp">
+          
+          <img  fetchpriority="high" src="/images/banner.webp" alt="友情链接">
+        
       </picture>
       
-        <img  fetchpriority="high" src="/images/banner.webp" alt="友情链接">
+        <img alt="友情链接" style="visibility: hidden;">
       
     
   
@@ -428,7 +439,7 @@
     
       <div>
         <span class="icon-brush"></span>
-        531
+        572
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
         00:03
@@ -535,6 +546,22 @@
 
     </div>
     
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png"/>
+        </div>
+      </div>
+    
     
     
     
@@ -574,6 +601,10 @@
 
 <script src="/js/pjax_script.js" data-pjax></script>
 
+
+
+  
+<script src="/js/generator_search.js" defer></script>
 
 
 
