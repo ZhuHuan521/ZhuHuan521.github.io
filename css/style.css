@@ -1492,6 +1492,36 @@ button {
     margin: 0 8px;
   }
 }
+@media screen and (max-width: 1241px) {
+  .post-meta > span {
+    margin: 0 8px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .post-meta > span {
+    margin: 0 6px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .post-meta > span {
+    margin: 0 2px;
+  }
+}
+@media screen and (max-width: 1241px) {
+  .post-meta > span span {
+    margin: 0 6px;
+  }
+}
+@media screen and (max-width: 959px) {
+  .post-meta > span span {
+    margin: 0 4px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .post-meta > span span {
+    margin: 0 3px;
+  }
+}
 .post-article {
   display: -webkit-box;
   -webkit-box-orient: vertical;
