@@ -329,9 +329,13 @@ $$</p><blockquote>
 <p>接下来就得去多做做题了，关于洛必达法则的易错点在这里也写一下吧，感觉和导数的定义辨析差不多。</p>
 <p>关键在于连续性的保证:</p>
 <p>我们知道</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\boxed&#123;\lim_&#123;x\to 0&#125;\frac&#123;f(x)&#125;&#123;g(x)&#125;\overset&#123;\frac&#123;0&#125;&#123;0&#125;or\frac&#123;\infty&#125;&#123;\infty&#125;&#125;&#123;=&#125;\lim_&#123;x\to 0&#125;\frac&#123;&#123;f&#125;&#x27;(x)&#125;&#123;&#123;g&#125;&#x27;(x)&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+$$\boxed{\lim_{x\to 0}\frac{f(x)}{g(x)}\overset{\frac{0}{0}or\frac{\infty}{\infty}}{=}\lim_{x\to 0}\frac{{f}'(x)}{{g}'(x)}}$$
+
 <p>但是，不一定有:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\boxed&#123;\lim_&#123;x \to 0&#125;\frac&#123;&#123;f&#125;&#x27;(x) &#125;&#123;&#123;g&#125;&#x27;(x)&#125;&#123;=&#125;\frac&#123;&#123;f&#125;&#x27;(0) &#125;&#123;&#123;g&#125;&#x27;(0)&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+$$\boxed{\lim_{x \to 0}\frac{{f}'(x) }{{g}'(x)}{=}\frac{{f}'(0) }{{g}'(0)}}$$
+
 <p>因为这一步需要的是导函数连续，而已知的是原函数可导且连续。<br />
 而后者无法保证前者，导函数还有可能在$x&#x3D;0$处有第二类间断点</p>
 <p>好了，今天的大概总结就到这了，晚上写这个日记的时候顺便学了markdown欸，不赖。</p>
@@ -344,7 +348,7 @@ $$</p><blockquote>
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
     <div class="article-nav-link-wrap right">
-          <img data-src="/covers/2.webp" data-sizes="auto" alt="记录CS有史以来最大黑天鹅事件" class="lazyload">
+          <img data-src="/covers/1.webp" data-sizes="auto" alt="记录CS有史以来最大黑天鹅事件" class="lazyload">
       <a href="/2025/10/25/%E8%AE%B0%E5%BD%95CS%E6%9C%89%E5%8F%B2%E4%BB%A5%E6%9D%A5%E6%9C%80%E5%A4%A7%E9%BB%91%E5%A4%A9%E9%B9%85%E4%BA%8B%E4%BB%B6/" aria-label="后一篇: 记录CS有史以来最大黑天鹅事件"  title="后一篇: 记录CS有史以来最大黑天鹅事件"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
@@ -380,7 +384,7 @@ $$</p><blockquote>
 </div>
       <div>
         <span class="icon-brush"></span>
-        3.4k
+        3.3k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
         00:13
