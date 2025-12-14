@@ -212,7 +212,7 @@
   <div class="post-wrap left" data-aos="fade-up">
       <a class="post-link" href="/2025/11/11/%E6%97%A5%E8%AE%B0-2025%E5%B9%B411%E6%9C%8811%E6%97%A5/" aria-label="日记-2025年11月11日" title="日记-2025年11月11日"></a>
     <div class="post-cover left">
-          <img data-src="/covers/3.webp" data-sizes="auto" alt="日记-2025年11月11日" class="lazyload">
+          <img data-src="/covers/2.webp" data-sizes="auto" alt="日记-2025年11月11日" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
@@ -281,7 +281,7 @@
   <div class="post-wrap right" data-aos="fade-up">
       <a class="post-link" href="/2025/10/25/%E8%AE%B0%E5%BD%95CS%E6%9C%89%E5%8F%B2%E4%BB%A5%E6%9D%A5%E6%9C%80%E5%A4%A7%E9%BB%91%E5%A4%A9%E9%B9%85%E4%BA%8B%E4%BB%B6/" aria-label="记录CS有史以来最大黑天鹅事件" title="记录CS有史以来最大黑天鹅事件"></a>
     <div class="post-cover right">
-          <img data-src="/covers/2.webp" data-sizes="auto" alt="记录CS有史以来最大黑天鹅事件" class="lazyload">
+          <img data-src="/covers/1.webp" data-sizes="auto" alt="记录CS有史以来最大黑天鹅事件" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
@@ -536,5 +536,41 @@ More info: Writing
 
 
 
-  </body>
+  <!-- hexo injector body_end start -->
+<script>
+  window.addEventListener('hexo-blog-decrypt', function() {
+    console.log('Hexo-Encrypt: 解密完成，开始触发 KaTeX 重绘...');
+
+    // 设置一个小延时，确保解密后的 HTML 内容已经完全挂载到 DOM 上
+    setTimeout(function() {
+      if (window.renderMathInElement) {
+        // 尝试获取文章容器，减少渲染范围提高性能
+        // 适配了常见的 Hexo 主题 (Butterfly, Next, Fluid, Keep 等)
+        var content = document.querySelector('.article-entry') 
+                   || document.querySelector('.post-body')
+                   || document.querySelector('.markdown-body')
+                   || document.querySelector('#post-content')
+                   || document.body; // 如果找不到特定容器，就渲染整个 body
+
+        // 手动调用 KaTeX 的渲染函数
+        // 注意：这里必须重新指定 delimiters，因为默认配置可能不会自动继承
+        renderMathInElement(content, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\(', right: '\)', display: false},
+              {left: '\[', right: '\]', display: true}
+          ],
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+          throwOnError: false
+        });
+        
+        console.log('KaTeX 重绘命令已发送。');
+      } else {
+        console.error('未找到 window.renderMathInElement，请检查 KaTeX 脚本是否已加载。');
+      }
+    }, 200); // 延时 200ms 防止竞态条件
+  });
+</script>
+<!-- hexo injector body_end end --></body>
   </html>
