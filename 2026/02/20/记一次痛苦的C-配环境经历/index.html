@@ -26,7 +26,7 @@
 <meta property="og:description" content="前言 C++ 名不虚传的难，之前多次尝试用vscode写 C++ ，因为喜欢轻量的东西，然而屡战屡败。 第一次是要include一个WinRT，怎么都include不进，然后转用vs，vcpkg一键安装，成功完成，配合使用这个桌面歌词软件。嗯对，就是我现在正在用的这个。 然后第二次用vscode写，就是调试总跑不起来 (现在知道好像它自带的这个调试不会自动链接所有的源文件，晕死) 然后把写好的代">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-02-20T13:33:46.000Z">
-<meta property="article:modified_time" content="2026-02-20T14:39:03.169Z">
+<meta property="article:modified_time" content="2026-02-20T14:40:06.768Z">
 <meta property="article:author" content="水竹">
 <meta name="twitter:card" content="summary">
     <link rel="alternate" href="/atom.xml" title="水竹的隐秘后花园" type="application/atom+xml">
@@ -154,7 +154,7 @@
     <div class="sidebar-wrap" data-aos="fade-up">
           <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 进入正题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%87%BA%E8%8C%85%E5%BA%90-mingw%E7%9A%84%E5%B0%9D%E8%AF%95-%E4%B8%8Etasksjson%E7%9A%84%E9%82%82%E9%80%85"><span class="toc-number">2.1.</span> <span class="toc-text"> 初出茅庐 MINGW的尝试： 与&quot;tasks.json&quot;的邂逅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%8F%91%E7%8E%B0-cmake%E7%A0%B4%E5%B1%80-cmakeliststxt%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 新发现 CMake破局： CMakelists.txt的配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E8%87%AA%E5%B7%B1%E8%8F%9C-%E4%B8%8D%E8%BF%87c%E7%A1%AE%E5%AE%9E%E9%98%B4"><span class="toc-number">3.</span> <span class="toc-text"> 总结：自己菜 不过C++确实阴</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 进入正题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%87%BA%E8%8C%85%E5%BA%90-mingw%E7%9A%84%E5%B0%9D%E8%AF%95-%E4%B8%8Etasksjson%E7%9A%84%E9%82%82%E9%80%85"><span class="toc-number">2.1.</span> <span class="toc-text"> 初出茅庐 MINGW的尝试： 与&quot;tasks.json&quot;的邂逅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%8F%91%E7%8E%B0-cmake%E7%A0%B4%E5%B1%80-cmakeliststxt%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 新发现 CMake破局： CMakelists.txt的配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text"> 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E8%8F%9C-%E4%B8%8D%E8%BF%87c%E7%A1%AE%E5%AE%9E%E9%98%B4"><span class="toc-number">3.1.</span> <span class="toc-text"> 自己菜 不过C++确实阴</span></a></li></ol></li></ol>
 </div>
 </div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -269,7 +269,8 @@
 <p>然后就是右上角那个愚蠢的调试按钮，它只会按照<code>tasks.json</code>里的去呆板地执行，具体怎么让它redirect到CMake是个谜，我认为肯定是可以的，网上也有相关文档，我照做了，但没用。问了gemini，它说弄不了，并且极力建议我不要用那玩意，会变得不幸。</p>
 <p>实际上确实是这样的，vscode的代码提示叫IntelliSense，根本不Intell (智慧) 好吧！我一按右上角那玩意，结果因为<code>tasks.json</code>是错的，然后提交到gdb里面报错，然后IntelliSense就开始给你画波浪线了😈😈😈</p>
 <p>所以我现在都还是用左下角的“播放”和“bug”图标，目前没啥问题了。</p>
-<h1 id="总结自己菜-不过c确实阴"><a class="markdownIt-Anchor" href="#总结自己菜-不过c确实阴"></a> 总结：自己菜 不过C++确实阴</h1>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<h2 id="自己菜-不过c确实阴"><a class="markdownIt-Anchor" href="#自己菜-不过c确实阴"></a> 自己菜 不过C++确实阴</h2>
 <p>目前，开发软件，引入需要的库是十分优雅的，直接在vcpkg里面安装，到时候别的项目需要使用也可以直接复用vcpkg目录里的东西，不会重复造轮子。</p>
 <p>但仍然存在的问题是能不能做一个<code>tasks.json</code>指向CMake，CMake Tools可以生成IntelliSense的配置，我觉得是可以生成<code>tasks.json</code>的，应该是我还没发现。</p>
 <p>此外，这个调试我还是搞不懂怎么搞，变量监视啥的没用。</p>
@@ -282,7 +283,7 @@
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
     <div class="article-nav-link-wrap right">
-          <img data-src="/covers/1.webp" data-sizes="auto" alt="日记-2025年11月11日" class="lazyload">
+          <img data-src="/covers/2.webp" data-sizes="auto" alt="日记-2025年11月11日" class="lazyload">
       <a href="/2025/11/11/%E6%97%A5%E8%AE%B0-2025%E5%B9%B411%E6%9C%8811%E6%97%A5/" aria-label="后一篇: 日记-2025年11月11日"  title="后一篇: 日记-2025年11月11日"></a>
       <div class="article-nav-caption">后一篇</div>
       <h3 class="article-nav-title">
@@ -343,7 +344,7 @@
   <div class="sidebar-wrap">
         <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 进入正题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%87%BA%E8%8C%85%E5%BA%90-mingw%E7%9A%84%E5%B0%9D%E8%AF%95-%E4%B8%8Etasksjson%E7%9A%84%E9%82%82%E9%80%85"><span class="toc-number">2.1.</span> <span class="toc-text"> 初出茅庐 MINGW的尝试： 与&quot;tasks.json&quot;的邂逅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%8F%91%E7%8E%B0-cmake%E7%A0%B4%E5%B1%80-cmakeliststxt%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 新发现 CMake破局： CMakelists.txt的配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E8%87%AA%E5%B7%B1%E8%8F%9C-%E4%B8%8D%E8%BF%87c%E7%A1%AE%E5%AE%9E%E9%98%B4"><span class="toc-number">3.</span> <span class="toc-text"> 总结：自己菜 不过C++确实阴</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text"> 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E6%AD%A3%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text"> 进入正题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%87%BA%E8%8C%85%E5%BA%90-mingw%E7%9A%84%E5%B0%9D%E8%AF%95-%E4%B8%8Etasksjson%E7%9A%84%E9%82%82%E9%80%85"><span class="toc-number">2.1.</span> <span class="toc-text"> 初出茅庐 MINGW的尝试： 与&quot;tasks.json&quot;的邂逅</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%8F%91%E7%8E%B0-cmake%E7%A0%B4%E5%B1%80-cmakeliststxt%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text"> 新发现 CMake破局： CMakelists.txt的配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text"> 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E8%8F%9C-%E4%B8%8D%E8%BF%87c%E7%A1%AE%E5%AE%9E%E9%98%B4"><span class="toc-number">3.1.</span> <span class="toc-text"> 自己菜 不过C++确实阴</span></a></li></ol></li></ol>
 </div>
 </div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -461,7 +462,7 @@
           description: "",
           stripContent: " 前言 C++ 名不虚传的难，之前多次尝试用vscode写 C++ ，因为喜欢轻量的东西，然而屡战屡败。 第一次是要include一个WinRT，怎么都include不进，然后转用vs，vcpkg一键安装，成功完成，配合使用这个桌面歌词软件。嗯对，就是我现在正在用的这个。 然后第二次用vscode写，就是调试总跑不起来 (现在知道好像它自带的这个调试不会自动链接所有的源文件，晕死) 然后把写好的代码又丢到vs里面去了，成功。 接下来就是这次了，这次我说什么都要用上vscode！  进入正题 先说",
           date: "Fri Feb 20 2026 21:33:46 GMT+0800",
-          updated: "Fri Feb 20 2026 22:39:03 GMT+0800",
+          updated: "Fri Feb 20 2026 22:40:06 GMT+0800",
           cover: "/images/banner.webp",
         };
       </script>
